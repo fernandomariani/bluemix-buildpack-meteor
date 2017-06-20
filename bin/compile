@@ -150,4 +150,8 @@ EOF
 PATH="$METEOR_BUILD_DIR/bin:$PATH"
 echo "-----> Vendoring node into slug"
 mkdir -p "$METEOR_BUILD_DIR/bin"
-cp "$VENDORED_NODE/bin/node" "$METEOR_BUILD_DIR/bin/node"
+mv "$VENDORED_NODE/bin/node" "$METEOR_BUILD_DIR/bin/node"
+echo "-----> Cleaning up"
+rm -rf "$BUILD_DIR"/private
+echo "-----> Done"
+df -h
