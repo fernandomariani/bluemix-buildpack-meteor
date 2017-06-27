@@ -153,5 +153,8 @@ mkdir -p "$METEOR_BUILD_DIR/bin"
 mv "$VENDORED_NODE/bin/node" "$METEOR_BUILD_DIR/bin/node"
 echo "-----> Cleaning up"
 rm -rf "$BUILD_DIR"/private
+if [ "$DELETE_DUPLICATES" == "true" ]; then
+  rm -rf "$BUILD_DIR"/public
+fi
 echo "-----> Done"
 df -h
